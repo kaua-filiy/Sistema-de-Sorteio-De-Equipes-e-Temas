@@ -1,6 +1,6 @@
 # Sistema de Sorteio de Equipes e Temas
 
-Um sistema web desenvolvido em ASP.NET Core com Razor Pages para automatizar o sorteio de equipes e a atribuição de temas para trabalhos em grupo.
+Um sistema web desenvolvido em ASP.NET 9 Core com Razor Pages para automatizar o sorteio de equipes e a atribuição de temas para trabalhos em grupo.
 
 ## Sobre o Projeto
 
