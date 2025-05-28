@@ -1,0 +1,18 @@
+@model Tema
+
+<h2>Confirmação de Cadastro de Tema</h2>
+
+<div>
+    <h4>Tema cadastrado com sucesso!</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nome:</dt>
+        <dd class="col-sm-10">@Model.Nome</dd>
+        <dt class="col-sm-2">Descrição:</dt>
+        <dd class="col-sm-10">@Model.Descricao</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Cadastrar novo tema</a> |
+    <a asp-controller="Home" asp-action="Index">Voltar para Home</a>
+</div>

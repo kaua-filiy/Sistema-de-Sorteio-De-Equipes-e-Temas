@@ -1,0 +1,71 @@
+@model Sorteio
+
+<h2>Sorteio de Equipes e Temas</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Erro
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                Pessoas Cadastradas
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Pessoas == null || ViewBag.Pessoas.Count == 0)
+                {
+                    <p>Nenhuma pessoa cadastrada. <a asp-controller="Pessoa" asp-action="Index">Cadastrar pessoas</a></p>
+                }
+                else
+                {
+                    <ul class="list-group">
+                        @foreach (var pessoa in ViewBag.Pessoas)
+                        {
+                            <li class="list-group-item">@pessoa.Nome</li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                Temas Cadastrados
+            </div>
+            <div class="card-body">
+                @if (ViewBag.Temas == null || ViewBag.Temas.Count == 0)
+                {
+                    <p>Nenhum tema cadastrado. <a asp-controller="Tema" asp-action="Index">Cadastrar temas</a></p>
+                }
+                else
+                {
+                    <ul class="list-group">
+                        @foreach (var tema in ViewBag.Temas)
+                        {
+                            <li class="list-group-item">@tema.Nome</li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Resultado" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="numeroEquipes">Número de Equipes:</label>
+        <input type="number" id="numeroEquipes" name="numeroEquipes" class="form-control" min="1" required />
+    </div>
+    
+    <button type="submit" class="btn btn-success mt-3">Realizar Sorteio</button>
+</form>
+
+<div class="mt-4">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Voltar para Home</a>
+</div>

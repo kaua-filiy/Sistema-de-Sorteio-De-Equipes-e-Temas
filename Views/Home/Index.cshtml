@@ -1,0 +1,264 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero-section text-center py-5 mb-5 bg-light rounded">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-lg-start">
+                <h1 class="display-4 fw-bold text-primary mb-3">Sorteio de Equipes e Temas</h1>
+                <p class="lead mb-4">Organize seus grupos de trabalho de forma rápida, justa e eficiente com nosso sistema de sorteio automatizado.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a asp-controller="Sorteio" asp-action="Index" class="btn btn-primary btn-lg px-4 me-md-2">Começar Sorteio</a>
+                    <a href="#como-funciona" class="btn btn-outline-secondary btn-lg px-4">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <img src="https://cdn.pixabay.com/photo/2017/07/31/11/44/laptop-2557576_1280.jpg" class="img-fluid rounded shadow" alt="Sorteio de Equipes" style="max-height: 350px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="features-section py-5 mb-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Recursos Principais</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-primary bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title h5">Cadastro de Pessoas</h3>
+                        <p class="card-text">Cadastre facilmente os participantes com todas as informações necessárias para o sorteio.</p>
+                        <a asp-controller="Pessoa" asp-action="Index" class="btn btn-sm btn-outline-primary">Cadastrar Pessoas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-success bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+                                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title h5">Cadastro de Temas</h3>
+                        <p class="card-text">Crie uma lista de temas para serem distribuídos entre as equipes formadas.</p>
+                        <a asp-controller="Tema" asp-action="Index" class="btn btn-sm btn-outline-success">Cadastrar Temas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-info bg-gradient text-white rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-shuffle" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                                <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title h5">Sorteio Automático</h3>
+                        <p class="card-text">Realize sorteios justos e equilibrados de pessoas e temas com apenas alguns cliques.</p>
+                        <a asp-controller="Sorteio" asp-action="Index" class="btn btn-sm btn-outline-info">Realizar Sorteio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="como-funciona" class="how-it-works py-5 mb-5 bg-light rounded">
+    <div class="container">
+        <h2 class="text-center mb-5">Como Funciona</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="step text-center">
+                    <div class="step-number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px;">1</div>
+                    <h3 class="h5">Cadastre Pessoas</h3>
+                    <p>Adicione os participantes com suas informações básicas.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="step text-center">
+                    <div class="step-number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px;">2</div>
+                    <h3 class="h5">Cadastre Temas</h3>
+                    <p>Crie uma lista de temas para os trabalhos das equipes.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="step text-center">
+                    <div class="step-number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px;">3</div>
+                    <h3 class="h5">Configure o Sorteio</h3>
+                    <p>Defina o número de equipes desejado para o sorteio.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="step text-center">
+                    <div class="step-number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 50px; height: 50px;">4</div>
+                    <h3 class="h5">Obtenha Resultados</h3>
+                    <p>Visualize as equipes formadas com seus respectivos temas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonials py-5 mb-5">
+    <div class="container">
+        <h2 class="text-center mb-5">O Que Dizem Nossos Usuários</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="card-text">"Este sistema facilitou muito a organização dos grupos de trabalho na minha disciplina. Os alunos adoraram a transparência do sorteio!"</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">MS</div>
+                            <div>
+                                <h6 class="mb-0">Maria Silva</h6>
+                                <small class="text-muted">Professora Universitária</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                        </div>
+                        <p class="card-text">"Economizei muito tempo na formação de equipes para projetos. O sistema é intuitivo e os resultados são sempre equilibrados."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">JC</div>
+                            <div>
+                                <h6 class="mb-0">João Costa</h6>
+                                <small class="text-muted">Coordenador de Projetos</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="card-text">"A distribuição aleatória de temas entre as equipes trouxe mais diversidade aos trabalhos apresentados. Recomendo fortemente!"</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">AP</div>
+                            <div>
+                                <h6 class="mb-0">Ana Paula</h6>
+                                <small class="text-muted">Gestora Educacional</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq py-5 mb-5 bg-light rounded">
+    <div class="container">
+        <h2 class="text-center mb-5">Perguntas Frequentes</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como o sistema garante um sorteio justo?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        O sistema utiliza algoritmos de embaralhamento aleatório para garantir que tanto a distribuição de pessoas quanto a atribuição de temas sejam completamente imparciais. Além disso, o algoritmo garante que as equipes tenham tamanhos equilibrados, com diferença máxima de uma pessoa entre elas.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Posso editar as equipes após o sorteio?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Atualmente, o sistema não permite edição direta das equipes após o sorteio. No entanto, você pode realizar um novo sorteio a qualquer momento se precisar de ajustes na composição das equipes ou na atribuição de temas.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Existe um limite de pessoas ou temas que posso cadastrar?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Não há limite específico para o número de pessoas ou temas que podem ser cadastrados no sistema. No entanto, para melhor desempenho, recomendamos manter o cadastro dentro de quantidades razoáveis para o contexto de uso.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Os dados cadastrados ficam salvos permanentemente?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Os dados são armazenados em memória durante a sessão atual. Ao reiniciar a aplicação, os dados precisarão ser cadastrados novamente. Para informações sobre como tratamos seus dados, consulte nossa <a asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta py-5 mb-5 text-center">
+    <div class="container">
+        <h2 class="mb-4">Pronto para organizar suas equipes?</h2>
+        <p class="lead mb-4">Comece agora mesmo a usar nosso sistema de sorteio e torne a formação de equipes mais eficiente e justa.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a asp-controller="Pessoa" asp-action="Index" class="btn btn-primary btn-lg px-4 gap-3">Cadastrar Pessoas</a>
+            <a asp-controller="Tema" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4">Cadastrar Temas</a>
+        </div>
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">

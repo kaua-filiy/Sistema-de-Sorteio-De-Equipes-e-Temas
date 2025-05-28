@@ -1,0 +1,16 @@
+@{
+    var maiores = ViewBag.Maiores as List<Pessoa>;
+    var menores = ViewBag.Menores as List<Pessoa>;
+}
+
+<h3>Maiores de Idade:</h3>
+@foreach (var pessoa in maiores)
+{
+    <p>@pessoa.Nome</p>
+}
+
+<h3>Menores de Idade:</h3>
+@foreach (var pessoa in menores)
+{
+    <p>@pessoa.Nome</p>
+}

@@ -1,0 +1,47 @@
+@model IEnumerable<Equipe>
+
+<h2>Resultado do Sorteio</h2>
+
+@if (ViewBag.Erro != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Erro
+    </div>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+}
+else
+{
+    <div class="alert alert-success">
+        <h4>Sorteio realizado com sucesso!</h4>
+    </div>
+
+    <div class="row">
+        @foreach (var equipe in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5>Equipe @equipe.Numero</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-3 text-muted">Tema: @equipe.Tema.Nome</h6>
+                        <p class="card-text">@equipe.Tema.Descricao</p>
+                        
+                        <h6>Integrantes:</h6>
+                        <ul class="list-group">
+                            @foreach (var pessoa in equipe.Pessoas)
+                            {
+                                <li class="list-group-item">@pessoa.Nome</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-primary">Realizar novo sorteio</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Voltar para Home</a>
+    </div>
+}
